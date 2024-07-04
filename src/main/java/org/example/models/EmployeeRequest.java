@@ -13,7 +13,7 @@ public class EmployeeRequest
 
     @JsonCreator
     public EmployeeRequest(
-            @JsonProperty("employeeID") employeeID,
+            @JsonProperty("employeeID") int employeeID,
             @JsonProperty("employeeName") String employeeName,
             @JsonProperty("employeeSalary") double employeeSalary,
             @JsonProperty("employeeBankAccountNumber") String employeeBankAccountNumber,
