@@ -11,13 +11,12 @@ import java.sql.SQLException;
 public class DeliveryEmpService {
     DeliveryEmpDao deliveryEmpDao;
 
-    public DeliveryEmpService(DeliveryEmpDao deliveryEmpDao) {
+    public DeliveryEmpService(final DeliveryEmpDao deliveryEmpDao) {
         this.deliveryEmpDao = deliveryEmpDao;
     }
 
-    public int createDeliveryEmployee(DeliveryEmpRequest deliveryEmpRequest)
-            throws SQLException, FailedToCreateException
-    {
+    public int createDeliveryEmployee(final DeliveryEmpRequest deliveryEmpRequest)
+            throws SQLException, FailedToCreateException{
         int id = deliveryEmpDao.createDeliveryEmployee(deliveryEmpRequest);
         if (id == -1) {
             throw new FailedToCreateException(Entity.DELIVERY_EMPLOYEE);

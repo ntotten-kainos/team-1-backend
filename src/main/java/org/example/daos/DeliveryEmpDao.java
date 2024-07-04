@@ -10,13 +10,14 @@ import java.sql.SQLException;
 
 
 public class DeliveryEmpDao {
-    public int createDeliveryEmployee(final DeliveryEmpRequest deliveryEmpRequest)
+    public int createDeliveryEmployee
+            (final DeliveryEmpRequest deliveryEmpRequest)
             throws SQLException {
         try (Connection connection =
                      DatabaseConnector.getConnection()) {
-
             String insertStatement =
-                    "INSERT INTO `SalesEmployee`(Name, BankAcctNum, NINO, Salary)"
+                    "INSERT INTO `SalesEmployee`"
+                            + "(Name, BankAcctNum, NINO, Salary)"
                     + "VALUES (?, ?, ?, ?, ?);";
 
             assert connection != null;
