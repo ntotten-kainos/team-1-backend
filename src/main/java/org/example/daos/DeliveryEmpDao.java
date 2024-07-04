@@ -4,8 +4,9 @@ import org.example.models.DeliveryEmpRequest;
 
 import java.sql.*;
 
+
 public class DeliveryEmpDao {
-    public int createSalesEmployee(DeliveryEmpRequest deliveryEmpRequest)
+    public int createDeliveryEmployee(final DeliveryEmpRequest deliveryEmpRequest)
             throws SQLException {
         try (Connection connection = DatabaseConnector.getConnection()) {
 

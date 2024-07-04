@@ -23,13 +23,11 @@ public class DeliveryEmpController {
 
     @POST
     @Produces(MediaType.APPLICATION_JSON)
-    public Response createDeliveryEmployee
-            (final DeliveryEmpRequest deliveryEmpRequest){
+    public Response createDeliveryEmployee(final DeliveryEmpRequest deliveryEmpRequest){
         try {
             return Response
                     .status(Response.Status.CREATED)
-                    .entity(deliveryEmpService.createDeliveryEmployee
-                            (deliveryEmpRequest))
+                    .entity(deliveryEmpService.createDeliveryEmployee(deliveryEmpRequest))
                     .build();
         } catch (FailedToCreateException | SQLException e) {
             return Response.serverError().build();

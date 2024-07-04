@@ -29,7 +29,7 @@ public class DeliveryEmployee extends Employee {
         return name;
     }
 
-    public void setName(String name) {
+    public void setName(final String name) {
         this.name = name;
     }
 
@@ -37,7 +37,7 @@ public class DeliveryEmployee extends Employee {
         return nationalInsurance;
     }
 
-    public void setNationalInsurance(String nationalInsurance) {
+    public void setNationalInsurance(final String nationalInsurance) {
         this.nationalInsurance = nationalInsurance;
     }
 
@@ -45,7 +45,7 @@ public class DeliveryEmployee extends Employee {
         return bankAccountNo;
     }
 
-    public void setBankAccountNo(int bankAccountNo) {
+    public void setBankAccountNo(final int bankAccountNo) {
         this.bankAccountNo = bankAccountNo;
     }
 
@@ -53,7 +53,7 @@ public class DeliveryEmployee extends Employee {
         return salary;
     }
 
-    public void setSalary(double salary) {
+    public void setSalary(final double salary) {
         this.salary = salary;
     }
 }

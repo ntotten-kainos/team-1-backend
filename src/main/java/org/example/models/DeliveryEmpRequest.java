@@ -25,7 +25,7 @@ public class DeliveryEmpRequest {
         return salary;
     }
 
-    public void setSalary(double salary) {
+    public void setSalary(final double salary) {
         this.salary = salary;
     }
 
@@ -33,7 +33,7 @@ public class DeliveryEmpRequest {
         return name;
     }
 
-    public void setName(String name) {
+    public void setName(final String name) {
         this.name = name;
     }
 
@@ -41,7 +41,7 @@ public class DeliveryEmpRequest {
         return nationalInsurance;
     }
 
-    public void setNationalInsurance(String nationalInsurance) {
+    public void setNationalInsurance(final String nationalInsurance) {
         this.nationalInsurance = nationalInsurance;
     }
 
@@ -49,7 +49,7 @@ public class DeliveryEmpRequest {
         return bankAccountNo;
     }
 
-    public void setBankAccountNo(int bankAccountNo) {
+    public void setBankAccountNo(final int bankAccountNo) {
         this.bankAccountNo = bankAccountNo;
     }
 }
