@@ -42,7 +42,8 @@ public class EmployeeDao {
         return employees;
     }
 
-    public int createEmployee (final EmployeeRequest employeeRequest) throws SQLException {
+    public int createEmployee(final EmployeeRequest employeeRequest)
+            throws SQLException {
 
         Connection connection = DatabaseConnector.getConnection();
 
