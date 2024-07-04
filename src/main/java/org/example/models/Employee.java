@@ -74,8 +74,10 @@ public class Employee {
                 + ", employeeName='"
                 + employeeName
                 + '\''
-                + ", employeeSalary=" + employeeSalary
-                + ", employeeBankAccountNumber='" + employeeBankAccountNumber
+                + ", employeeSalary="
+                + employeeSalary
+                + ", employeeBankAccountNumber='"
+                + employeeBankAccountNumber
                 + '\''
                 + ", employeeNationalInsuranceNumber='"
                 + employeeNationalInsuranceNumber

@@ -58,9 +58,9 @@ public class EmployeeRequest {
         return employeeBankAccountNumber;
     }
 
-    public void setEmployeeBankAccountNumber
-            (final String employeeBankAccountNumber) {
-        this.employeeBankAccountNumber = employeeBankAccountNumber;
+    public void setEmployeeBankAccountNumber(
+            final String employeeBankAccountNumber) {
+            this.employeeBankAccountNumber = employeeBankAccountNumber;
     }
 
     public String getEmployeeNationalInsuranceNumber() {
@@ -69,7 +69,7 @@ public class EmployeeRequest {
 
     public void setEmployeeNationalInsuranceNumber(
             final String employeeNationalInsuranceNumber) {
-        this.employeeNationalInsuranceNumber =
+            this.employeeNationalInsuranceNumber =
                 employeeNationalInsuranceNumber;
     }
 }
