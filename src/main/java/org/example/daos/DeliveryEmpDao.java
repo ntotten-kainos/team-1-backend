@@ -2,16 +2,22 @@ package org.example.daos;
 
 import org.example.models.DeliveryEmpRequest;
 
-import java.sql.*;
+import java.sql.Statement;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
 
 public class DeliveryEmpDao {
-    public int createDeliveryEmployee(final DeliveryEmpRequest deliveryEmpRequest)
+    public int createDeliveryEmployee
+            (final DeliveryEmpRequest deliveryEmpRequest)
             throws SQLException {
-        try (Connection connection = DatabaseConnector.getConnection()) {
+        try (Connection connection =
+                     DatabaseConnector.getConnection()) {
 
-            String insertStatement = "INSERT INTO `SalesEmployee`(Name, BankAcctNum, NINO, Salary)" +
-                    "VALUES (?, ?, ?, ?, ?);";
+            String insertStatement = "INSERT INTO `SalesEmployee`(Name, BankAcctNum, NINO, Salary)"
+                    + "VALUES (?, ?, ?, ?, ?);";
 
             assert connection != null;
             PreparedStatement statement = connection.prepareStatement(insertStatement, Statement.RETURN_GENERATED_KEYS);
