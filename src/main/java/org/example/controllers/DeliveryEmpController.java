@@ -17,7 +17,8 @@ import java.sql.SQLException;
 public class DeliveryEmpController {
     DeliveryEmpService deliveryEmpService;
 
-    public DeliveryEmpController(final DeliveryEmpService deliveryEmpService) {
+    public DeliveryEmpController(
+            final DeliveryEmpService deliveryEmpService) {
         this.deliveryEmpService = deliveryEmpService;
     }
 
