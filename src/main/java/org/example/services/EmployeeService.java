@@ -4,28 +4,21 @@ import org.example.daos.EmployeeDao;
 import org.example.exceptions.Entity;
 import org.example.exceptions.FailedToCreateException;
 import org.example.models.EmployeeRequest;
-
 import java.sql.SQLException;
-import java.util.List;
 
-public class EmployeeService
-{
+public class EmployeeService {
     EmployeeDao employeeDao;
 
-    public EmployeeService(EmployeeDao employeeDao)
-    {
+    public EmployeeService(EmployeeDao employeeDao) {
         this.employeeDao = employeeDao;
     }
 
-    public int createEmployee(EmployeeRequest employeeRequest) throws FailedToCreateException, SQLException
-    {
+    public int createEmployee(EmployeeRequest employeeRequest) throws FailedToCreateException, SQLException {
         int id = employeeDao.createEmployee(employeeRequest);
 
-        if(id == -1)
-        {
+        if(id == -1) {
             throw new FailedToCreateException(Entity.EMPLOYEE);
         }
         return id;
     }
-
 }
