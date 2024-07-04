@@ -15,8 +15,8 @@ public class DeliveryEmpService {
         this.deliveryEmpDao = deliveryEmpDao;
     }
 
-    public int createDeliveryEmployee
-            (final DeliveryEmpRequest deliveryEmpRequest)
+    public int createDeliveryEmployee(
+            final DeliveryEmpRequest deliveryEmpRequest)
             throws SQLException, FailedToCreateException{
         int id = deliveryEmpDao.createDeliveryEmployee(deliveryEmpRequest);
         if (id == -1) {
