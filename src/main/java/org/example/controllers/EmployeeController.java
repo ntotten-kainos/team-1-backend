@@ -11,24 +11,20 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import java.sql.SQLException;
 
-//"Engineering Academy - Group Challenge 2 - Team 3 - Sales Employee API")
-//@Path("/api/sales-employee"
 @Api("Engineering Academy - Group Challenge 2 - Team 3 - Sales Employee API")
 @Path("/api/employee")
-
-public class EmployeeController
-{
+public class EmployeeController {
      EmployeeService employeeService;
 
-    public EmployeeController(final EmployeeService employeeService) {
-        this.employeeService = employeeService;
+    public EmployeeController(
+            final EmployeeService employeeService) {
+            this.employeeService = employeeService;
     }
 
     @POST
     @Produces(MediaType.APPLICATION_JSON)
-    public Response createEmployee(EmployeeRequest employeeRequest)
-    {
-        try{
+    public Response createEmployee(final EmployeeRequest employeeRequest) {
+        try {
             return Response
                     .status(Response.Status.CREATED)
                     .entity(employeeService.createEmployee(employeeRequest))

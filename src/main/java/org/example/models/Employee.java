@@ -1,37 +1,30 @@
 package org.example.models;
-// employeeID smallint Primary Key AUTO_INCREMENT NOT NULL,
-//    employeeName varchar(70),
-//    employeeSalary decimal(7,2),
-//    employeeBankAccountNumber char(8),
-//    employeeNationalInsuranceNumber char(9),
-//    employeeCommissionRate DECIMAL(2, 2),
-//    roleID smallint not using, using inheritance instead
-public class Employee
-{
+
+public class Employee {
     private int employeeID;
     private String employeeName;
     private double employeeSalary;
     private String employeeBankAccountNumber;
     private String employeeNationalInsuranceNumber;
 
-
-    public Employee(int employeeID, String employeeName,
-                    double employeeSalary, String employeeBankAccountNumber,
-                    String employeeNationalInsuranceNumber)
-    {
+    public Employee(
+            final int employeeID,
+            final String employeeName,
+            final double employeeSalary,
+            final String employeeBankAccountNumber,
+            final String employeeNationalInsuranceNumber) {
         this.employeeID = employeeID;
         this.employeeName = employeeName;
         this.employeeSalary = employeeSalary;
         this.employeeBankAccountNumber = employeeBankAccountNumber;
         this.employeeNationalInsuranceNumber = employeeNationalInsuranceNumber;
-
     }
 
     public int getEmployeeID() {
         return employeeID;
     }
 
-    public void setEmployeeID(int employeeID) {
+    public void setEmployeeID(final int employeeID) {
         this.employeeID = employeeID;
     }
 
@@ -39,7 +32,7 @@ public class Employee
         return employeeName;
     }
 
-    public void setEmployeeName(String employeeName) {
+    public void setEmployeeName(final String employeeName) {
         this.employeeName = employeeName;
     }
 
@@ -47,7 +40,7 @@ public class Employee
         return employeeSalary;
     }
 
-    public void setEmployeeSalary(double employeeSalary) {
+    public void setEmployeeSalary(final double employeeSalary) {
         this.employeeSalary = employeeSalary;
     }
 
@@ -55,7 +48,7 @@ public class Employee
         return employeeBankAccountNumber;
     }
 
-    public void setEmployeeBankAccountNumber(String employeeBankAccountNumber) {
+    public void setEmployeeBankAccountNumber(final String employeeBankAccountNumber) {
         this.employeeBankAccountNumber = employeeBankAccountNumber;
     }
 
@@ -63,7 +56,7 @@ public class Employee
         return employeeNationalInsuranceNumber;
     }
 
-    public void setEmployeeNationalInsuranceNumber(String employeeNationalInsuranceNumber) {
+    public void setEmployeeNationalInsuranceNumber(final String employeeNationalInsuranceNumber) {
         this.employeeNationalInsuranceNumber = employeeNationalInsuranceNumber;
     }
 
@@ -71,11 +64,11 @@ public class Employee
     @Override
     public String toString() {
         return "Employee{" +
-                "employeeID=" + employeeID +
-                ", employeeName='" + employeeName + '\'' +
-                ", employeeSalary=" + employeeSalary +
-                ", employeeBankAccountNumber='" + employeeBankAccountNumber + '\'' +
-                ", employeeNationalInsuranceNumber='" + employeeNationalInsuranceNumber + '\'' +
-                '}';
+                "employeeID=" + employeeID
+                + ", employeeName='" + employeeName
+                + '\'' + ", employeeSalary=" + employeeSalary
+                + ", employeeBankAccountNumber='" + employeeBankAccountNumber
+                + '\'' + ", employeeNationalInsuranceNumber='"
+                + employeeNationalInsuranceNumber + '\'' + '}';
     }
 }

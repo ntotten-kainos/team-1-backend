@@ -1,6 +1,5 @@
 package org.example.models;
 
-public class EmployeeResponse
-{
+public class EmployeeResponse {
 
 }

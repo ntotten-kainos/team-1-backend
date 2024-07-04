@@ -3,8 +3,7 @@ package org.example.models;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class EmployeeRequest
-{
+public class EmployeeRequest {
     private int employeeID;
     private String employeeName;
     private double employeeSalary;
@@ -59,7 +58,8 @@ public class EmployeeRequest
         return employeeBankAccountNumber;
     }
 
-    public void setEmployeeBankAccountNumber(final String employeeBankAccountNumber) {
+    public void setEmployeeBankAccountNumber
+            (final String employeeBankAccountNumber) {
         this.employeeBankAccountNumber = employeeBankAccountNumber;
     }
 
@@ -67,7 +67,9 @@ public class EmployeeRequest
         return employeeNationalInsuranceNumber;
     }
 
-    public void setEmployeeNationalInsuranceNumber(final String employeeNationalInsuranceNumber) {
-        this.employeeNationalInsuranceNumber = employeeNationalInsuranceNumber;
+    public void setEmployeeNationalInsuranceNumber(
+            final String employeeNationalInsuranceNumber) {
+        this.employeeNationalInsuranceNumber =
+                employeeNationalInsuranceNumber;
     }
 }
