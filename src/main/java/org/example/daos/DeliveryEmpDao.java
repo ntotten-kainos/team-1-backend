@@ -10,8 +10,7 @@ import java.sql.SQLException;
 
 
 public class DeliveryEmpDao {
-    public int createDeliveryEmployee
-            (final DeliveryEmpRequest deliveryEmpRequest)
+    public int createDeliveryEmployee(final DeliveryEmpRequest deliveryEmpRequest)
             throws SQLException {
         try (Connection connection =
                      DatabaseConnector.getConnection()) {
