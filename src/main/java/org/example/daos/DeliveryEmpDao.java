@@ -10,17 +10,19 @@ import java.sql.SQLException;
 
 
 public class DeliveryEmpDao {
-    public int createDeliveryEmployee
-            (final DeliveryEmpRequest deliveryEmpRequest)
+    public int createDeliveryEmployee(final DeliveryEmpRequest deliveryEmpRequest)
             throws SQLException {
         try (Connection connection =
                      DatabaseConnector.getConnection()) {
 
-            String insertStatement = "INSERT INTO `SalesEmployee`(Name, BankAcctNum, NINO, Salary)"
+            String insertStatement =
+                    "INSERT INTO `SalesEmployee`(Name, BankAcctNum, NINO, Salary)"
                     + "VALUES (?, ?, ?, ?, ?);";
 
             assert connection != null;
-            PreparedStatement statement = connection.prepareStatement(insertStatement, Statement.RETURN_GENERATED_KEYS);
+            PreparedStatement statement = connection
+                    .prepareStatement(insertStatement, Statement
+                            .RETURN_GENERATED_KEYS);
 
             statement.setString(1, deliveryEmpRequest.getName());
             statement.setInt(2, deliveryEmpRequest.getBankAccountNo());
