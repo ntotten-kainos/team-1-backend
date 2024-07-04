@@ -50,7 +50,9 @@ public class EmployeeDao {
 
             String insertStatement =
                     "INSERT into `Employees`\n"
-                            + "(employeeName, employeeSalary,EmployeeBankAccountNumber, "
+                            + "(employeeName, "
+                            + "employeeSalary,"
+                            + "EmployeeBankAccountNumber, "
                             + "employeeNationalInsuranceNumber,\n"
                             + "values (?,?,?,?,?);";
 
