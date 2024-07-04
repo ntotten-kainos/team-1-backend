@@ -11,12 +11,12 @@ public class EmployeeDao {
     public List<Employee> getAllEmployees() throws SQLException {
         List<Employee> employees = new ArrayList<>();
 
-        try(Connection connection = DatabaseConnector.getConnection()) {
+        try (Connection connection = DatabaseConnector.getConnection()) {
             Statement statement = connection.createStatement();
             ResultSet resultSet = statement.executeQuery(
-                    "select employeeID, employeeName ,employeeSalary, " +
-                            "employeeBankAccountNumber,employeeNationalInsuranceNumber," +
-                            "employeeCommissionRate from Employees;");
+                    "select employeeID, employeeName ,employeeSalary, "
+                            + "employeeBankAccountNumber,employeeNationalInsuranceNumber,"
+                            + "employeeCommissionRate from Employees;");
 
             while (resultSet.next()) {
                 Employee order = new Employee(
@@ -33,15 +33,15 @@ public class EmployeeDao {
         return employees;
     }
 
-    public int createEmployee (EmployeeRequest employeeRequest) throws SQLException {
+    public int createEmployee (final EmployeeRequest employeeRequest) throws SQLException {
 
         Connection connection = DatabaseConnector.getConnection();
 
         String insertStatement =
-        "INSERT into `Employees`\n" +
-        "(employeeName, employeeSalary,EmployeeBankAccountNumber, employeeNationalInsuranceNumber,\n" +
-        "values\n" +
-        "(?,?,?,?,?);";
+        "INSERT into `Employees`\n"
+                + "(employeeName, employeeSalary,EmployeeBankAccountNumber, "
+                + "employeeNationalInsuranceNumber,\n"
+                + "values (?,?,?,?,?);";
 
         PreparedStatement st = connection.prepareStatement(insertStatement,
                 Statement.RETURN_GENERATED_KEYS);
