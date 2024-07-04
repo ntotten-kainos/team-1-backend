@@ -18,7 +18,7 @@ public class DeliveryEmployee extends Employee {
             String name,
             final String nationalInsurance,
             final int bankAccountNo,
-            final double salary){
+            final double salary) {
         this.name = name;
         this.nationalInsurance = nationalInsurance;
         this.bankAccountNo = bankAccountNo;

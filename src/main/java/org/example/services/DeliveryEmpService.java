@@ -17,7 +17,7 @@ public class DeliveryEmpService {
 
     public int createDeliveryEmployee(
             final DeliveryEmpRequest deliveryEmpRequest)
-            throws SQLException, FailedToCreateException{
+            throws SQLException, FailedToCreateException {
         int id = deliveryEmpDao.createDeliveryEmployee(deliveryEmpRequest);
         if (id == -1) {
             throw new FailedToCreateException(Entity.DELIVERY_EMPLOYEE);

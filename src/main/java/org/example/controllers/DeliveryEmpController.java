@@ -25,7 +25,7 @@ public class DeliveryEmpController {
     @POST
     @Produces(MediaType.APPLICATION_JSON)
     public Response createDeliveryEmployee(
-            final DeliveryEmpRequest deliveryEmpRequest){
+            final DeliveryEmpRequest deliveryEmpRequest) {
         try {
             return Response
                     .status(Response.Status.CREATED)
