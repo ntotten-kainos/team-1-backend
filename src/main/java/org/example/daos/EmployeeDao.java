@@ -40,7 +40,6 @@ public class EmployeeDao
 
         Connection connection = DatabaseConnector.getConnection();
 
-        //String insertStatement = "INSERT INTO `Product` (Name, Description, Price) Values (?,?,?)";
         String insertStatement =
         "INSERT into `Employees`\n" +
         "(employeeName, employeeSalary,EmployeeBankAccountNumber, employeeNationalInsuranceNumber,\n" +

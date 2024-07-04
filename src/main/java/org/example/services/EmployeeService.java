@@ -1,6 +1,9 @@
 package org.example.services;
 
 import org.example.daos.EmployeeDao;
+import org.example.exceptions.Entity;
+import org.example.exceptions.FailedToCreateException;
+import org.example.models.EmployeeRequest;
 
 import java.sql.SQLException;
 import java.util.List;
@@ -14,14 +17,15 @@ public class EmployeeService
         this.employeeDao = employeeDao;
     }
 
-    public int createEmployee(EmployeeResquest employeeResquest) throws FailedToCreateException, SQLException
+    public int createEmployee(EmployeeRequest employeeRequest) throws FailedToCreateException, SQLException
     {
-        int id = employeeDao..createProduct(productRequest);
+        int id = employeeDao.createEmployee(employeeRequest);
 
         if(id == -1)
         {
-            throw new FailedToCreateException(Entity.PRODUCT);
+            throw new FailedToCreateException(Entity.EMPLOYEE);
         }
         return id;
     }
+
 }
