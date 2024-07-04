@@ -33,6 +33,7 @@ public class DeliveryEmpController {
                             .createDeliveryEmployee(deliveryEmpRequest))
                     .build();
         } catch (FailedToCreateException | SQLException e) {
+            System.out.println(e);
             return Response.serverError().build();
         }
     }

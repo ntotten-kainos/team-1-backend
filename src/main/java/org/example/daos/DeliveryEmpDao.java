@@ -16,9 +16,9 @@ public class DeliveryEmpDao {
         try (Connection connection =
                      DatabaseConnector.getConnection()) {
             String insertStatement =
-                    "INSERT INTO `SalesEmployee`"
+                    "INSERT INTO `DeliveryEmployee`"
                             + "(Name, BankAcctNum, NINO, Salary)"
-                    + "VALUES (?, ?, ?, ?, ?);";
+                    + "VALUES (?, ?, ?, ?);";
 
             assert connection != null;
             PreparedStatement statement = connection
