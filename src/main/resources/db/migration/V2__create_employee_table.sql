@@ -4,7 +4,7 @@ create table Employees (
     employeeSalary decimal(7,2),
     employeeBankAccountNumber char(8),
     employeeNationalInsuranceNumber char(9),
-    employeeCommissionRate DECIMAL(2, 2),
+
 
 );
 
@@ -12,4 +12,4 @@ INSERT into `Employees`
 (employeeName, employeeSalary,EmployeeBankAccountNumber, employeeNationalInsuranceNumber,
 employeeCommissionRate)
 values
-("Buddy",22000.00,12345678,'ab123456C',0.0);
+("Buddy",22000.00,12345678,'ab123456C');

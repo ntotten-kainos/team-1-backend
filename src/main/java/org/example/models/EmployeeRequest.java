@@ -1,12 +1,9 @@
 package org.example.models;
-// employeeID smallint Primary Key AUTO_INCREMENT NOT NULL,
-//    employeeName varchar(70),
-//    employeeSalary decimal(7,2),
-//    employeeBankAccountNumber char(8),
-//    employeeNationalInsuranceNumber char(9),
-//    employeeCommissionRate DECIMAL(2, 2),
-//    roleID smallint not using, using inheritance instead
-public class Employee
+
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+public class EmployeeRequest
 {
     private int employeeID;
     private String employeeName;
@@ -14,17 +11,18 @@ public class Employee
     private String employeeBankAccountNumber;
     private String employeeNationalInsuranceNumber;
 
-
-    public Employee(int employeeID, String employeeName,
-                    double employeeSalary, String employeeBankAccountNumber,
-                    String employeeNationalInsuranceNumber)
-    {
+    @JsonCreator
+    public EmployeeRequest(
+            @JsonProperty("employeeID") employeeID,
+            @JsonProperty("employeeName") String employeeName,
+            @JsonProperty("employeeSalary") double employeeSalary,
+            @JsonProperty("employeeBankAccountNumber") String employeeBankAccountNumber,
+            @JsonProperty("employeeNationalInsuranceNumber") String employeeNationalInsuranceNumber) {
         this.employeeID = employeeID;
         this.employeeName = employeeName;
         this.employeeSalary = employeeSalary;
         this.employeeBankAccountNumber = employeeBankAccountNumber;
         this.employeeNationalInsuranceNumber = employeeNationalInsuranceNumber;
-
     }
 
     public int getEmployeeID() {
@@ -65,17 +63,5 @@ public class Employee
 
     public void setEmployeeNationalInsuranceNumber(String employeeNationalInsuranceNumber) {
         this.employeeNationalInsuranceNumber = employeeNationalInsuranceNumber;
-    }
-
-
-    @Override
-    public String toString() {
-        return "Employee{" +
-                "employeeID=" + employeeID +
-                ", employeeName='" + employeeName + '\'' +
-                ", employeeSalary=" + employeeSalary +
-                ", employeeBankAccountNumber='" + employeeBankAccountNumber + '\'' +
-                ", employeeNationalInsuranceNumber='" + employeeNationalInsuranceNumber + '\'' +
-                '}';
     }
 }
