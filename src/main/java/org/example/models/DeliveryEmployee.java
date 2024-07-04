@@ -14,12 +14,11 @@ public class DeliveryEmployee extends Employee {
     @JsonProperty
     private double commissionRate;
 
-    public DeliveryEmployee(
+    public DeliveryEmployee(final
             String name,
-            String nationalInsurance,
-            int bankAccountNo,
-            double salary)
-            {
+            final String nationalInsurance,
+            final int bankAccountNo,
+            final double salary){
         this.name = name;
         this.nationalInsurance = nationalInsurance;
         this.bankAccountNo = bankAccountNo;
