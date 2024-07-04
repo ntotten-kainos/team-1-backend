@@ -2,13 +2,11 @@ package org.example.daos;
 
 import org.example.models.Employee;
 import org.example.models.EmployeeRequest;
-
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class EmployeeDao
-{
+public class EmployeeDao {
 
     public List<Employee> getAllEmployees() throws SQLException {
         List<Employee> employees = new ArrayList<>();
@@ -35,8 +33,7 @@ public class EmployeeDao
         return employees;
     }
 
-    public int createEmployee (EmployeeRequest employeeRequest) throws SQLException
-    {
+    public int createEmployee (EmployeeRequest employeeRequest) throws SQLException {
 
         Connection connection = DatabaseConnector.getConnection();
 
@@ -46,7 +43,8 @@ public class EmployeeDao
         "values\n" +
         "(?,?,?,?,?);";
 
-        PreparedStatement st = connection.prepareStatement(insertStatement, Statement.RETURN_GENERATED_KEYS);
+        PreparedStatement st = connection.prepareStatement(insertStatement,
+                Statement.RETURN_GENERATED_KEYS);
 
         st.setString(1, employeeRequest.getEmployeeName());
         st.setDouble(2, employeeRequest.getEmployeeSalary());
@@ -57,8 +55,7 @@ public class EmployeeDao
 
         ResultSet rs = st.getGeneratedKeys();
 
-        if(rs.next())
-        {
+        if (rs.next()) {
             return rs.getInt(1);
         }
         return -1;

@@ -9,14 +9,15 @@ import java.sql.SQLException;
 public class EmployeeService {
     EmployeeDao employeeDao;
 
-    public EmployeeService(EmployeeDao employeeDao) {
+    public EmployeeService(final EmployeeDao employeeDao) {
         this.employeeDao = employeeDao;
     }
 
-    public int createEmployee(EmployeeRequest employeeRequest) throws FailedToCreateException, SQLException {
+    public int createEmployee(final EmployeeRequest employeeRequest)
+            throws FailedToCreateException, SQLException {
         int id = employeeDao.createEmployee(employeeRequest);
 
-        if(id == -1) {
+        if (id == -1) {
             throw new FailedToCreateException(Entity.EMPLOYEE);
         }
         return id;
