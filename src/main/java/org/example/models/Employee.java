@@ -62,7 +62,8 @@ public class Employee {
 
     public void setEmployeeNationalInsuranceNumber(
             final String employeeNationalInsuranceNumber) {
-            this.employeeNationalInsuranceNumber = employeeNationalInsuranceNumber;
+            this.employeeNationalInsuranceNumber =
+                    employeeNationalInsuranceNumber;
     }
 
 

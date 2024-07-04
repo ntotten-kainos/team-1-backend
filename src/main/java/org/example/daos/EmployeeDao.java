@@ -59,7 +59,7 @@ public class EmployeeDao {
         st.setString(1, employeeRequest.getEmployeeName());
         st.setDouble(2, employeeRequest.getEmployeeSalary());
         st.setString(3, employeeRequest.getEmployeeBankAccountNumber());
-        st.setString(4,employeeRequest.getEmployeeNationalInsuranceNumber());
+        st.setString(4, employeeRequest.getEmployeeNationalInsuranceNumber());
 
         st.executeUpdate();
 
