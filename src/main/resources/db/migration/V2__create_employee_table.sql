@@ -2,10 +2,10 @@ create table Employees (
     employeeID smallint Primary Key AUTO_INCREMENT NOT NULL,
     employeeName varchar(70),
     employeeSalary decimal(7,2),
-    employeeBankAccountNumber varchar(8),
-    employeeNationalInsuranceNumber varchar(9),
+    employeeBankAccountNumber char(8),
+    employeeNationalInsuranceNumber char(9),
     employeeCommissionRate DECIMAL(2, 2),
-    roleID smallint
+
 );
 
 INSERT into `Employees`
