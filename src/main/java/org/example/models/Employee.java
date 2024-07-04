@@ -24,51 +24,62 @@ public class Employee {
         return employeeID;
     }
 
-    public void setEmployeeID(final int employeeID) {
-        this.employeeID = employeeID;
+    public void setEmployeeID(
+            final int employeeID) {
+            this.employeeID = employeeID;
     }
 
     public String getEmployeeName() {
         return employeeName;
     }
 
-    public void setEmployeeName(final String employeeName) {
-        this.employeeName = employeeName;
+    public void setEmployeeName(
+            final String employeeName) {
+            this.employeeName = employeeName;
     }
 
     public double getEmployeeSalary() {
         return employeeSalary;
     }
 
-    public void setEmployeeSalary(final double employeeSalary) {
-        this.employeeSalary = employeeSalary;
+    public void setEmployeeSalary(
+            final double employeeSalary) {
+            this.employeeSalary = employeeSalary;
     }
 
     public String getEmployeeBankAccountNumber() {
         return employeeBankAccountNumber;
     }
 
-    public void setEmployeeBankAccountNumber(final String employeeBankAccountNumber) {
-        this.employeeBankAccountNumber = employeeBankAccountNumber;
+    public void setEmployeeBankAccountNumber(
+            final String employeeBankAccountNumber) {
+            this.employeeBankAccountNumber = employeeBankAccountNumber;
     }
 
     public String getEmployeeNationalInsuranceNumber() {
         return employeeNationalInsuranceNumber;
     }
 
-    public void setEmployeeNationalInsuranceNumber(final String employeeNationalInsuranceNumber) {
-        this.employeeNationalInsuranceNumber = employeeNationalInsuranceNumber;
+    public void setEmployeeNationalInsuranceNumber(
+            final String employeeNationalInsuranceNumber) {
+            this.employeeNationalInsuranceNumber = employeeNationalInsuranceNumber;
     }
 
 
     @Override
     public String toString() {
-        return "Employee{" +
-                "employeeID=" + employeeID
-                + ", employeeName='" + employeeName
-                + '\'' + ", employeeSalary=" + employeeSalary
+        return "Employee{"
+                + "employeeID="
+                + employeeID
+                + ", employeeName='"
+                + employeeName
+                + '\''
+                + ", employeeSalary=" + employeeSalary
                 + ", employeeBankAccountNumber='" + employeeBankAccountNumber
-                + '\'' + ", employeeNationalInsuranceNumber='"
-                + employeeNationalInsuranceNumber + '\'' + '}';
+                + '\''
+                + ", employeeNationalInsuranceNumber='"
+                + employeeNationalInsuranceNumber
+                + '\''
+                + '}';
     }
 }
