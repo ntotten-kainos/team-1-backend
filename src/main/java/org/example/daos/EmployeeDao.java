@@ -2,7 +2,10 @@ package org.example.daos;
 
 import org.example.models.Employee;
 import org.example.models.EmployeeRequest;
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,21 +18,26 @@ public class EmployeeDao {
             Statement statement = connection.createStatement();
             ResultSet resultSet = statement.executeQuery(
                     "select employeeID, employeeName ,employeeSalary, "
-                            + "employeeBankAccountNumber,employeeNationalInsuranceNumber,"
+                            + "employeeBankAccountNumber,"
+                            + "employeeNationalInsuranceNumber,"
                             + "employeeCommissionRate from Employees;");
 
             while (resultSet.next()) {
                 Employee order = new Employee(
-                        resultSet.getInt("employeeID"),
-                        resultSet.getString("employeeName"),
-                        resultSet.getDouble("employeeSalary"),
-                        resultSet.getString("employeeBankAccountNumber"),
-                        resultSet.getString("employeeNationalInsuranceNumber"));
+                        resultSet.getInt(
+                                "employeeID"),
+                        resultSet.getString(
+                                "employeeName"),
+                        resultSet.getDouble(
+                                "employeeSalary"),
+                        resultSet.getString(
+                                "employeeBankAccountNumber"),
+                        resultSet.getString(
+                                "employeeNationalInsuranceNumber"));
 
                 employees.add(order);
             }
         }
-
         return employees;
     }
 
