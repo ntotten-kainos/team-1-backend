@@ -1,8 +1,8 @@
 package org.example.models;
 
 public class Employee {
-    private int employeeID;
-    private String employeeName;
+    protected int employeeID;
+    protected String employeeName;
     private double employeeSalary;
     private String employeeBankAccountNumber;
     private String employeeNationalInsuranceNumber;
