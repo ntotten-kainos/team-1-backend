@@ -16,7 +16,8 @@ public class SalesEmployee extends Employee {
            final String employeeNationalInsuranceNumber,
            final double commRate) {
 
-        super(employeeID, employeeName, employeeSalary, employeeBankAccountNumber, employeeNationalInsuranceNumber );
+        super(employeeID, employeeName, employeeSalary,
+                employeeBankAccountNumber, employeeNationalInsuranceNumber);
         this.commissionRate = commRate;
     }
 
