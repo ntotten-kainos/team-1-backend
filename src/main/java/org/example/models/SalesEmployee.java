@@ -1,15 +1,14 @@
 package org.example.models;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import org.example.models.SalesEmployee;
+
 public class SalesEmployee extends Employee {
 
 
     @JsonProperty
     private double commissionRate;
 
-    public SalesEmployee (
-            final int employeeID,
+    public SalesEmployee (final int employeeID,
            final String employeeName,
            final double employeeSalary,
            final String employeeBankAccountNumber,

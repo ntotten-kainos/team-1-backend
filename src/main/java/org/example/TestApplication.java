@@ -12,14 +12,12 @@ import org.example.controllers.DeliveryEmpController;
 import org.example.daos.DeliveryEmpDao;
 import org.example.services.DeliveryEmpService;
 import org.example.controllers.ProjectController;
-import org.example.controllers.TestController;
 import org.example.daos.ProjectDao;
-import org.example.daos.TestDao;
 import org.example.services.ProjectService;
 import org.example.controllers.SalesEmpController;
 import org.example.daos.SalesEmpDao;
 import org.example.services.SalesEmpService;
-import org.example.services.TestService;
+
 
 public class TestApplication extends Application<TestConfiguration> {
     public static void main(final String[] args) throws Exception {
