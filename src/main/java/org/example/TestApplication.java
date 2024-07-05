@@ -5,6 +5,9 @@ import io.dropwizard.setup.Bootstrap;
 import io.dropwizard.setup.Environment;
 import io.federecio.dropwizard.swagger.SwaggerBundle;
 import io.federecio.dropwizard.swagger.SwaggerBundleConfiguration;
+import org.example.controllers.DeliveryEmpController;
+import org.example.daos.DeliveryEmpDao;
+import org.example.services.DeliveryEmpService;
 import org.example.controllers.ProjectController;
 import org.example.controllers.TestController;
 import org.example.daos.ProjectDao;
@@ -45,8 +48,17 @@ public class TestApplication extends Application<TestConfiguration> {
                 .register(new ProjectController(
                         new ProjectService(
                                 new ProjectDao())));
+
         environment.jersey().register(
                 new SalesEmpController(new SalesEmpService(new SalesEmpDao()))
+        );
+
+        environment.jersey().register(
+                new DeliveryEmpController(
+                        new DeliveryEmpService(
+                                new DeliveryEmpDao()
+                        )
+                )
         );
     }
 

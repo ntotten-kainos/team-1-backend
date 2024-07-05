@@ -1,6 +1,7 @@
 package org.example.exceptions;
 
-public class DoesNotExistException extends Throwable {
+public final class DoesNotExistException extends Throwable {
+
     /**
      * DoesNotExistException thrown if attempting to retrieve data that
      * does not exist.
