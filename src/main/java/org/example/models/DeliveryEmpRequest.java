@@ -12,7 +12,8 @@ public class DeliveryEmpRequest {
     @JsonCreator
     public DeliveryEmpRequest(
             @JsonProperty("Name") final String name,
-            @JsonProperty("NationalInsuranceNumber") final String nationalInsurance,
+            @JsonProperty("NationalInsuranceNumber")
+            final String nationalInsurance,
             @JsonProperty("BankAccountNumber") final int bankAccountNo,
             @JsonProperty("Salary") final double salary) {
         this.name = name;
