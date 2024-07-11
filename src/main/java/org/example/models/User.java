@@ -1,11 +1,11 @@
 package org.example.models;
 
 public class User {
-    String username;
-    String password;
-    int roleID;
+    private final String username;
+    private final String password;
+    private final int roleID;
 
-    public User(String username, String password, int roleID) {
+    public User(final String username, final String password, final int roleID) {
         this.username = username;
         this.password = password;
         this.roleID = roleID;

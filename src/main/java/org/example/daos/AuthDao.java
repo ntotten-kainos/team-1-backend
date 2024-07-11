@@ -9,7 +9,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class AuthDao {
-    public User getUser(LoginRequest loginRequest) throws SQLException {
+    public User getUser(final LoginRequest loginRequest) throws SQLException {
         try (Connection conn = DatabaseConnector.getConnection()) {
             String userLoginQuery = "SELECT username, password, roleID "
                                     + "FROM `Users` "
@@ -23,7 +23,7 @@ public class AuthDao {
 
             ResultSet rs = statement.executeQuery();
 
-            while(rs.next()) {
+            while (rs.next()) {
                 return new User(
                         rs.getString("username"),
                         rs.getString("password"),
