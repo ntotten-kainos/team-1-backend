@@ -58,6 +58,13 @@ public class TestApplication extends Application<TestConfiguration> {
                 new DeliveryEmpController(
                         new DeliveryEmpService(
                                 new DeliveryEmpDao())));
+
+        environment.jersey().register(
+                (new DeliveryEmpController(
+                        new DeliveryEmpService(
+                                new DeliveryEmpDao()))));
+
     }
+
 
 }
