@@ -1,10 +1,9 @@
 CREATE TABLE Project (
-
 projectID int PRIMARY KEY NOT NULL AUTO_INCREMENT,
 projectName varchar(100) NOT NULL,
 projectValue decimal(11,2) NOT NULL,
-clientID int FOREIGN KEY REFERENCES Client(clientID)
-
+clientID int NOT NULL,
+FOREIGN KEY (clientID) REFERENCES Client(clientID)
 );
 
 INSERT INTO Project (projectName, projectValue, clientID)
