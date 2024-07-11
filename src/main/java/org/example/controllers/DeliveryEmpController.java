@@ -5,6 +5,7 @@ import org.example.exceptions.FailedToCreateException;
 import org.example.models.DeliveryEmpRequest;
 import org.example.services.DeliveryEmpService;
 
+import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
@@ -36,5 +37,12 @@ public class DeliveryEmpController {
             System.out.println(e);
             return Response.serverError().build();
         }
+    }
+
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response getDeliveryEmployees() throws SQLException {
+        return Response.ok().entity(deliveryEmpService.getAllDeliveryEmployees()).build();
+
     }
 }

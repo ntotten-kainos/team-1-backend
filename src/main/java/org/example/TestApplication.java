@@ -48,8 +48,14 @@ public class TestApplication extends Application<TestConfiguration> {
                         new ProjectDao())));
 
         environment.jersey().register(
+                new SalesEmpController(
+                      new SalesEmpService(
+                            new SalesEmpDao())));
 
-                new SalesEmpController(new SalesEmpService(new SalesEmpDao())));
+        environment.jersey().register(
+                new DeliveryEmpController(
+                        new DeliveryEmpService(
+                                new DeliveryEmpDao())));
 
         environment.jersey().register(
                 new DeliveryEmpController(
@@ -65,5 +71,6 @@ public class TestApplication extends Application<TestConfiguration> {
                 )
         );
     }
+
 
 }
