@@ -1,6 +1,7 @@
 package org.example.daos;
 
 import org.example.models.SalesEmpRequest;
+import org.example.models.SalesEmployee;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -40,11 +41,38 @@ public class SalesEmpDao {
             statement.executeUpdate();
 
             ResultSet rs = statement.getGeneratedKeys();
-
+            System.err.println(rs);
             if (rs.next()) {
                 return rs.getInt(1);
             }
         }
         return -1;
+    }
+
+    public SalesEmployee getSalesEmployeeById(int id) throws SQLException {
+        try (Connection connection = DatabaseConnector.getConnection()) {
+
+            String insertStatement =
+                    "SELECT id, Name, BankAcctNum, NINO, Salary, CommissionRate FROM `SalesEmployee` WHERE id = ?;";
+
+            PreparedStatement statement = connection.prepareStatement(
+                    insertStatement);
+
+            statement.setInt(1, id);
+
+            ResultSet rs = statement.executeQuery();
+            while (rs.next()) {
+                return new SalesEmployee(
+                        rs.getInt("id"),
+                        rs.getString("Name"),
+                        rs.getDouble("Salary"),
+                        rs.getString("BankAcctNum"),
+                        rs.getString("NINO"),
+                        rs.getDouble("CommissionRate")
+
+                );
+            }
+        }
+        return null;
     }
 }
