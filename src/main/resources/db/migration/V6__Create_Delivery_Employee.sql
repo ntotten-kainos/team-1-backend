@@ -17,4 +17,4 @@ INSERT INTO `DeliveryEmployee`(
     "12345678",
     "AB123456C",
     "20000.00"
-    )
+    );
