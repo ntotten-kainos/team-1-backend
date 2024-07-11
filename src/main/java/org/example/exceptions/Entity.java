@@ -29,7 +29,11 @@ public enum Entity {
     /**
      * Project entity.
      */
-    PROJECT("Project");
+    PROJECT("Project"),
+    /**
+     * User entity.
+     */
+    USER("User");
 
     /**
      * Entity value.
