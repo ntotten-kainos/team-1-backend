@@ -3,9 +3,12 @@ package org.example.services;
 import org.example.daos.SalesEmpDao;
 import org.example.exceptions.Entity;
 import org.example.exceptions.FailedToCreateException;
+import org.example.mappers.SalesEmpMapper;
 import org.example.models.SalesEmpRequest;
+import org.example.models.SalesEmpResponse;
 
 import java.sql.SQLException;
+import java.util.List;
 
 public class SalesEmpService {
     private final SalesEmpDao salesEmpDao;
@@ -22,4 +25,12 @@ public class SalesEmpService {
         }
         return id;
     }
+
+    public List<SalesEmpResponse> getAllSalesEmployees()
+            throws SQLException {
+        return SalesEmpMapper
+                .mapSalesEmployeeListToSalesEmployeeResponseList(
+                        salesEmpDao.getAllSalesEmployees());
+    }
+
 }
