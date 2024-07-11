@@ -35,7 +35,7 @@ public class AuthService {
                 .expiration(new Date(System.currentTimeMillis() + 28800000))
                 .claim("Role", user.getRoleID())
                 .subject(user.getUsername())
-                .issuer("Team1_Web_App")
+                .issuer("team-1-backend")
                 .signWith(authKey)
                 .compact();
     }
