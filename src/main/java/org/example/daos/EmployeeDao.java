@@ -1,11 +1,8 @@
 package org.example.daos;
 
 import org.example.models.EmployeeRequest;
-import java.sql.Connection;
-import java.sql.SQLException;
-import java.sql.Statement;
-import java.sql.ResultSet;
-import java.sql.PreparedStatement;
+
+import java.sql.*;
 
 public class EmployeeDao {
 

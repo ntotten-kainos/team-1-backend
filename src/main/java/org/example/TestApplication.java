@@ -5,18 +5,12 @@ import io.dropwizard.setup.Bootstrap;
 import io.dropwizard.setup.Environment;
 import io.federecio.dropwizard.swagger.SwaggerBundle;
 import io.federecio.dropwizard.swagger.SwaggerBundleConfiguration;
-import org.example.controllers.EmployeeController;
-import org.example.daos.EmployeeDao;
-import org.example.services.EmployeeService;
-import org.example.controllers.DeliveryEmpController;
-import org.example.daos.DeliveryEmpDao;
-import org.example.services.DeliveryEmpService;
-import org.example.controllers.ProjectController;
-import org.example.daos.ProjectDao;
-import org.example.services.ProjectService;
-import org.example.controllers.SalesEmpController;
-import org.example.daos.SalesEmpDao;
-import org.example.services.SalesEmpService;
+import io.jsonwebtoken.Jwts;
+import org.example.controllers.*;
+import org.example.daos.*;
+import org.example.services.*;
+
+import java.security.Key;
 
 
 public class TestApplication extends Application<TestConfiguration> {
@@ -40,6 +34,9 @@ public class TestApplication extends Application<TestConfiguration> {
     @Override
     public void run(final TestConfiguration configuration,
                     final Environment environment) {
+
+        Key jwtKey = Jwts.SIG.HS256.key().build();
+
         environment.jersey()
                 .register(
                         new EmployeeController(
@@ -51,8 +48,9 @@ public class TestApplication extends Application<TestConfiguration> {
                         new ProjectDao())));
 
         environment.jersey().register(
-
-                new SalesEmpController(new SalesEmpService(new SalesEmpDao())));
+                new SalesEmpController(
+                      new SalesEmpService(
+                            new SalesEmpDao())));
 
         environment.jersey().register(
                 new DeliveryEmpController(
@@ -60,10 +58,18 @@ public class TestApplication extends Application<TestConfiguration> {
                                 new DeliveryEmpDao())));
 
         environment.jersey().register(
-                (new DeliveryEmpController(
+                new DeliveryEmpController(
                         new DeliveryEmpService(
-                                new DeliveryEmpDao()))));
+                                new DeliveryEmpDao())));
 
+        environment.jersey().register(
+                new AuthController(
+                        new AuthService(
+                                new AuthDao(),
+                                jwtKey
+                        )
+                )
+        );
     }
 
 
