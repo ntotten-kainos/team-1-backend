@@ -1,5 +1,5 @@
 CREATE TABLE `Client` (
-    clientID int NOT NULL AUTO_INCREMENT,
+    clientID int NOT NULL AUTO_INCREMENT PRIMARY KEY,
     clientName VARCHAR(64) NOT NULL
 );
 
