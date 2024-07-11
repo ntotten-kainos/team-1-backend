@@ -1,6 +1,7 @@
 package org.example.controllers;
 
 import io.swagger.annotations.Api;
+import org.example.exceptions.FailedToCreateException;
 import org.example.exceptions.InvalidException;
 import org.example.models.LoginRequest;
 import org.example.services.AuthService;
@@ -33,6 +34,21 @@ public class AuthController {
             return Response.serverError().build();
         } catch (InvalidException e) {
             return Response.status(Response.Status.BAD_REQUEST).entity(e.getMessage()).build();
+        }
+    }
+    @POST
+    @Path("/register")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response registerUser(LoginRequest loginRequest) {
+        try {
+            authService.registerUser(loginRequest);
+            return Response
+                    .status(Response.Status.CREATED)
+                    .build();
+        } catch (FailedToCreateException | SQLException e) {
+            return Response.serverError().build();
+        } catch (InvalidException e) {
+            throw new RuntimeException(e);
         }
     }
 }
